@@ -1,0 +1,12 @@
+# goland
+.idea/
+
+# run
+.run/
+
+# local env files
+.env
+env.bash
+env.sh
+env.zsh
+env.fish
