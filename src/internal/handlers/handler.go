@@ -18,7 +18,8 @@ func SetHandler(engine *gin.Engine, srv service.Service) {
 
 	authApi := engine.Group("/")
 	{
-		authApi.POST("auth", h.Auth)
+		authApi.GET("auth", h.Auth)
+		authApi.GET("auth_redirect", h.AuthRedirect)
 	}
 
 }

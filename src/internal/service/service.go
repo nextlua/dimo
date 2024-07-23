@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"github.com/gin-gonic/gin"
+	"github.com/patrickmn/go-cache"
 	"log/slog"
 	"nextlua/dimo/internal/config"
 	"nextlua/dimo/internal/models"
@@ -23,6 +24,7 @@ type Service interface {
 type service struct {
 	logger       *slog.Logger
 	repo         *repository.Repository
+	cacheManager *cache.Cache
 	envVariables *config.EnvVars
 }
 
@@ -30,10 +32,12 @@ type service struct {
 func NewService(
 	logger *slog.Logger,
 	repo *repository.Repository,
+	cacheManager *cache.Cache,
 	envVariables *config.EnvVars) Service {
 	return &service{
 		logger:       logger,
 		repo:         repo,
+		cacheManager: cacheManager,
 		envVariables: envVariables,
 	}
 }

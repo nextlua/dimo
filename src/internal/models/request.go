@@ -1,6 +1,8 @@
 package models
 
-type AuthInput struct{}
+type AuthInput struct {
+	Key string `json:"key"`
+}
 
 type AuthRedirectInput struct {
 	Code string `json:"code" example:"asd"` //code

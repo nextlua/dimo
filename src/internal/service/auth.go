@@ -3,7 +3,6 @@ package service
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"net/http"
 	"nextlua/dimo/internal/models"
 )
 
@@ -20,7 +19,7 @@ const dimoRedirectUrlFormat = "https://auth.dev.dimo.zone/auth?client_id=%s&redi
 //		  $ref: "#/responses/authResponse"
 func (s *service) Auth(ctx *gin.Context, req models.AuthInput) (int, models.AuthResponse) {
 	url := s.getRedirectedUrl()
-	ctx.Redirect(http.StatusTemporaryRedirect, url)
+	ctx.Redirect(303, url)
 	return 404, models.AuthResponse{BaseResponse: models.BaseResponse{Message: "Not found"}}
 }
 

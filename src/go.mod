@@ -2,14 +2,13 @@ module nextlua/dimo
 
 go 1.22.4
 
-toolchain go1.22.5
-
 require (
 	github.com/codingconcepts/env v0.0.0-20240618133406-5b0845441187
 	github.com/getsentry/sentry-go v0.28.1
 	github.com/gin-gonic/gin v1.10.0
 	github.com/go-playground/validator/v10 v10.20.0
 	github.com/joho/godotenv v1.5.1
+	github.com/patrickmn/go-cache v2.1.0+incompatible
 )
 
 require (
