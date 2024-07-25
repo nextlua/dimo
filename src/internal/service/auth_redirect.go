@@ -19,7 +19,8 @@ func (s *service) AuthRedirect(ctx *gin.Context, req models.AuthRedirectInput) (
 	code := req.Code
 	return http.StatusOK, models.AuthRedirectResponse{
 		BaseResponse: models.BaseResponse{
-			Message: "Success",
+			IsSucceed: true,
+			Message:   "Success",
 		},
 		Data: &models.AuthRedirectResponseData{
 			Code: code,

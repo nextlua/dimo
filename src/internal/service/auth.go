@@ -6,7 +6,7 @@ import (
 	"nextlua/dimo/internal/models"
 )
 
-const dimoRedirectUrlFormat = "https://auth.dev.dimo.zone/auth?client_id=%s&redirect_uri=%s&scope=openid email&response_type=code"
+const dimoRedirectUrlFormat = "https://auth.dimo.zone/auth?client_id=%s&redirect_uri=%s&scope=openid email&response_type=code"
 
 // Auth represents auth post method
 // swagger:operation POST /auth authRequest
